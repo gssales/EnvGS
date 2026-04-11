@@ -2,8 +2,8 @@ configs: configs/datasets/envgs/envgs.yaml
 
 dataloader_cfg:
     dataset_cfg: &dataset_cfg
-        ratio: 0.25
-        data_root: data/datasets/envgs/audi
+        ratio: 0.234
+        data_root: /mnt/data/easyvolcap/envgs/audi
         view_sample: [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23,
                       25, 26, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45,
                       46, 47, 49, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 65, 66, 67,
@@ -24,8 +24,8 @@ val_dataloader_cfg:
 
 model_cfg:
     sampler_cfg:
-        preload_gs: data/datasets/envgs/audi/sparse/0/points3D.ply
+        preload_gs: /mnt/data/easyvolcap/envgs/audi/sparse/0/points3D.ply
         spatial_scale: 6.437488746643067
         # Environment Gaussian
-        env_preload_gs: data/datasets/envgs/audi/envs/points3D.ply
+        env_preload_gs: /mnt/data/easyvolcap/envgs/audi/envs/points3D.ply
         env_bounds: [[-24.43369652781677, -9.675989911182787, -21.932267889066896], [24.759688617142107, 1.977861847608774, 54.04323229716381]]

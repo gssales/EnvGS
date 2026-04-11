@@ -3,18 +3,18 @@ configs:
 
 dataloader_cfg:
     dataset_cfg: &dataset_cfg
-        data_root: data/datasets/refnerf/shiny_blender/ball/train
+        data_root: /mnt/data/easyvolcap/shiny_blender/ball/train
         view_sample: [0, null, 1]
 
 val_dataloader_cfg:
     dataset_cfg:
-        data_root: data/datasets/refnerf/shiny_blender/ball/test
+        data_root: /mnt/data/easyvolcap/shiny_blender/ball/test
         view_sample: [0, null, 1]
 
 model_cfg:
     sampler_cfg:
-        preload_gs: data/datasets/refnerf/shiny_blender/ball/points/pcds/points3d.ply
+        preload_gs: /mnt/data/easyvolcap/shiny_blender/ball/points/pcds/points3d.ply
         spatial_scale: 4.773876905441284
         # Environment Gaussian
-        env_preload_gs: data/datasets/refnerf/shiny_blender/ball/points/envs/points3d.ply
+        env_preload_gs: /mnt/data/easyvolcap/shiny_blender/ball/points/envs/points3d.ply
         env_bounds: [[-50.0, -50.0, -50.0], [50.0, 50.0, 50.0]]

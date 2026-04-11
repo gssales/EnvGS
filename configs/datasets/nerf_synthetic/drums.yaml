@@ -3,7 +3,7 @@ configs:
 
 dataloader_cfg: # we see the term "dataloader" as one word?
     dataset_cfg: &dataset_cfg
-        data_root: /mnt/data/easyvolcap/nerf_synthetic/lego/train
+        data_root: /mnt/data/easyvolcap/nerf_synthetic/drums/train
         near: 2.0
         far: 6.0
         use_aligned_cameras: False
@@ -11,14 +11,14 @@ dataloader_cfg: # we see the term "dataloader" as one word?
 
 val_dataloader_cfg:
     dataset_cfg:
-        data_root: /mnt/data/easyvolcap/nerf_synthetic/lego/test
+        data_root: /mnt/data/easyvolcap/nerf_synthetic/drums/test
         view_sample: [0, null, 1] 
 
 model_cfg:
     sampler_cfg:
-        preload_gs: /mnt/data/easyvolcap/nerf_synthetic/lego/points/pcds/points3d.ply
+        preload_gs: /mnt/data/easyvolcap/nerf_synthetic/drums/points/pcds/points3d.ply
         spatial_scale: 5.202147674560547
         # Environment Gaussian
-        env_preload_gs: /mnt/data/easyvolcap/nerf_synthetic/lego/points/envs/points3d.ply
+        env_preload_gs: /mnt/data/easyvolcap/nerf_synthetic/drums/points/envs/points3d.ply
         env_bounds: [[-50.0, -50.0, -50.0], [50.0, 50.0, 50.0]]
 

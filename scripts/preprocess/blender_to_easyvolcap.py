@@ -62,6 +62,11 @@ def main():
                 os.makedirs(os.path.dirname(acc_easyvolcap_path), exist_ok=True)
                 os.system(f"cp -r {img_blender_path.replace(f'.{args.ext}', f'_alpha.{args.ext}')} {acc_easyvolcap_path}")
 
+            if args.has_normal:
+                acc_easyvolcap_path = join(normal_out_dir, f'{cnt:04d}', f'000000.{args.ext}')
+                os.makedirs(os.path.dirname(acc_easyvolcap_path), exist_ok=True)
+                os.system(f"cp -r {img_blender_path.replace(f'.{args.ext}', f'_normal.{args.ext}')} {acc_easyvolcap_path}")
+
             # Fetch and store camera parameters
             c2w_opengl = np.array(frame['transform_matrix']).astype(np.float32)
             c2w_opencv = c2w_opengl @ np.array([[1, 0, 0, 0], [0, -1, 0, 0], [0, 0, -1, 0], [0, 0, 0, 1]])
@@ -84,7 +89,11 @@ def main():
         blender_path = join(blender_root, scene)
         easyvolcap_path = join(easyvolcap_root, scene)
 
-        sh = imageio.imread(join(blender_path, 'train', sorted(os.listdir(join(blender_path, 'train')))[1])).shape
+        image_dir = join(blender_path, 'train')
+        if not exists(image_dir):
+            image_dir = join(blender_path, 'rgb')
+
+        sh = imageio.imread(join(image_dir, sorted(os.listdir(join(image_dir)))[1])).shape
         H, W = int(sh[0]), int(sh[1])
 
         # Load frames information of all splits
