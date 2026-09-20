@@ -9,6 +9,8 @@ model_cfg:
 
 runner_cfg:
     epochs: 120
+    save_ep: 120
+    eval_ep: 120
 
 # prettier-ignore
 exp_name: {{fileBasenameNoExtension}}
