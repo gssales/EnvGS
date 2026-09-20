@@ -1,8 +1,9 @@
 # Default config for EnvGS
 runner_cfg:
     visualizer_cfg:
-        types: ['RENDER', 'DEPTH', 'ALPHA', 'NORMAL', 'SURFACE_NORMAL',
-                'SPECULAR', 'DIFFUSE', 'REFLECTION']
+        types: []
+        # types: ['RENDER', 'DEPTH', 'ALPHA', 'NORMAL', 'SURFACE_NORMAL',
+                # 'SPECULAR', 'DIFFUSE', 'REFLECTION']
     optimizer_cfg:
         lr: 0.05 # add default lr to params of other modules
         eps: 1.e-15
@@ -18,10 +19,10 @@ runner_cfg:
         type: NoopLR
     epochs: 120
     ep_iter: 500
-    save_latest_ep: 10
+    save_latest_ep: 30
     save_ep: 120
     eval_ep: 10
-    log_interval: 1
+    log_interval: 100
     record_images_to_tb: False # save disk space
 
 model_cfg:

@@ -121,7 +121,7 @@ class VolumetricVideoDataset(Dataset):
                  dist_opt_K: bool = True,  # use optimized K for undistortion (will crop out black edges), mostly useful for large number of images
                  backend: str = 'colmap', # undistort using colmap or opencv
                  encode_ext: str = '.jpg',
-                 cache_raw: bool = False,
+                 cache_raw: bool = True,
                  ddp_shard_dataset: bool = True,  # for image based rendering, no sharding for now
 
                  # Visual hull priors # TODO: maybe move to a different module?

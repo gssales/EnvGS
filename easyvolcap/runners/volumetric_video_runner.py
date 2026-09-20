@@ -60,7 +60,7 @@ class VolumetricVideoRunner:  # a plain and simple object controlling the traini
                  log_interval: int = 1,  # 10ms, tune this if in realtime
                  empty_cache_interval: int = 1e10,  # MARK: SLOW
                  host_empty_cache_interval: int = 1e10,  # MARK: SLOW
-                 record_interval: int = 1,  # ?ms, tune this if in realtime
+                 record_interval: int = 100,  # ?ms, tune this if in realtime
                  torch_vram_frac_limit: float = 1.0,
                  parallel_dataloading: bool = True,
                  strict: bool = True,  # strict loading of network and modules?
@@ -70,7 +70,8 @@ class VolumetricVideoRunner:  # a plain and simple object controlling the traini
                  exp_name: str = cfg.exp_name,  # name of the experiment
                  pretrained_model: str = '',  # load this model first
                  pretrained_model_ext: str = '.pt',  # ['.pt', '.npz']
-                 trained_model: str = f'data/trained_model/{cfg.exp_name}',  # MARK: global configuration
+                #  trained_model: str = f'data/trained_model/{cfg.exp_name}',  # MARK: global configuration
+                 trained_model: str = cfg.exp_name,  # MARK: global configuration
                  load_epoch: int = -1,  # load different epoch to start with
                  reset_ep: int = 1e9,  # reset the training generator every x epoches
 
